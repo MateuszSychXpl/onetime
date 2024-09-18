@@ -1,0 +1,20 @@
+{
+  "name": "onetime-text-share",
+  "version": "1.0.0",
+  "description": "A web application for one-time text sharing",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ejs": "^3.1.6",
+    "helmet": "^4.6.0",
+    "escape-html": "^1.0.3"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.3"
+  }
+}

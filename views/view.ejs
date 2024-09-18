@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Shared Text</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shared Text</h1>
+        <% if (pinProtected) { %>
+            <form action="/view/<%= id %>" method="POST">
+                <input type="password" name="pin" placeholder="Enter PIN" required />
+                <button type="submit">Submit</button>
+            </form>
+            <% if (typeof error !== 'undefined') { %>
+                <p class="error"><%= error %></p>
+            <% } %>
+        <% } else { %>
+            <div class="message">
+                <% if (sanitized) { %>
+                    <p><%- message %></p>
+                <% } else { %>
+                    <p><%= message %></p>
+                <% } %>
+            </div>
+            <p class="warning">This message has been deleted after viewing.</p>
+        <% } %>
+        <a href="/" class="btn">Share Another Text</a>
+    </div>
+</body>
+</html>

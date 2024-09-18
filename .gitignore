@@ -1,0 +1,41 @@
+# Dependenciesy
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Logi
+logs
+*.log
+
+# Pliki środowiskowe
+.env
+.env.local
+.env.*.local
+
+# Pliki tymczasowe
+tmp/
+temp/
+
+# Pliki systemu operacyjnego
+.DS_Store
+Thumbs.db
+
+# Pliki IDE i edytorów
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Pliki budowania i dystrybucji
+dist/
+build/
+*.tgz
+
+# Pliki pokrycia kodu i testów
+coverage/
+
+# Inne
+*.pid
+*.seed
+*.pid.lock

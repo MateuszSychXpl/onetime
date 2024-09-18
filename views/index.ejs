@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Time Text Share</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>XPL One-Time Text Share</h1>
+        <% if (typeof link !== 'undefined') { %>
+            <div class="result">
+                <p>Your one-time link:</p>
+                <input type="text" value="<%= link %>" id="linkInput" readonly>
+                <button onclick="copyLink()">Copy Link</button>
+            </div>
+            <a href="/" class="btn back-btn">Back</a>
+        <% } else { %>
+            <form action="/share" method="POST">
+                <textarea name="text" rows="5" placeholder="Enter your text here" required></textarea>
+                <input type="password" name="pin" placeholder="Optional PIN (leave empty for no PIN)" />
+                <button type="submit">Generate Link</button>
+            </form>
+        <% } %>
+    </div>
+    <script>
+        function copyLink() {
+            const linkInput = document.getElementById('linkInput');
+            linkInput.select();
+            document.execCommand('copy');
+            alert('Link copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
